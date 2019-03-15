@@ -33,17 +33,23 @@
       within textStr
 
 */
+window.onload = init;
 
 function init() {
-      var stars = "span#stars";
+      var stars = document.querySelectorAll("span#starts img");
       for (var i = 0; i < stars.length; i++) {
-            document.addEventListener("mouseenter", lightStars());
+            stars[i].style.cursor = "pointer";
+            stars[i].addEventListener("mouseenter", lightStars());
       }
       document.getElementById("commentField").addEventListener("keyup", Count());
 }
 
-function lightStars() {
-      var starNumber = e.target.alt;
+function lightStars(e) {
+      var starNumber = event.target.alt;
+      var stars = document.querySelectorAll("span#starts img");
+      for (var i = 0; i < starNumber.length; i++) {
+            stars[i].src = "url(bw_star2.png)";
+      }
 }
 
 
