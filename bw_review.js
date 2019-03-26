@@ -69,7 +69,19 @@ function turnOffstars(e) {
       }
 };
 
-function updateCount() {};
+function updateCount() {
+      var commentText = document.getElementById("comment").value;
+      var charCount = countCharacters(commentText);
+      var wordCountBox = document.getElementById("wordCount");
+      wordCountBox.value = charCount + "/1000";
+      if (charCount > 1000) {
+            wordCountBox.style.backgroundColor = "red";
+            wordCountBox.style.color = "white";
+      } else {
+            wordCountBox.style.backgroundColor = "black";
+            wordCountBox.style.color = "white";
+      }
+};
 
 
 
