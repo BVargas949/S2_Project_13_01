@@ -37,7 +37,7 @@ window.onload = init;
 
 function init() {
       var stars = document.querySelectorAll("span#stars img");
-      for (var i = 0; i <= stars.length; i++) {
+      for (var i = 0; i < stars.length; i++) {
             stars[i].style.cursor = "pointer";
             stars[i].addEventListener("mouseenter", lightStars);
       }
@@ -45,8 +45,9 @@ function init() {
 }
 
 function lightStars(e) {
-      var stars = document.querySelectorAll("span#stars img");
       var starNumber = e.target.alt;
+      var stars = document.querySelectorAll("span#stars img");
+
 
       for (var i = 0; i < starNumber; i++) {
             stars[i].src = "bw_star2.png";
